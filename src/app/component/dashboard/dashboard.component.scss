@@ -1,0 +1,13 @@
+.clickable-block {
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 0.25rem;
+}
+
+.clickable-block:hover {
+    background-color: #f0f0f0;
+}
+
+.fs-3 {
+    font-size: 3rem; /* Adjust the size as needed */
+}

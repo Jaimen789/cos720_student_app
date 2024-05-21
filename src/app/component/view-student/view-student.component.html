@@ -1,0 +1,23 @@
+<div>
+  <label for="modules">Select Module:</label>
+  <select id="modules" (change)="onModuleChange($event)">
+    <option *ngFor="let module of modules" [value]="module.id">{{ module.name }}</option>
+  </select>
+</div>
+
+<div *ngIf="noStudents">
+  <p>No students found in this module.</p>
+</div>
+
+<div *ngIf="!noStudents && studentsDisplayData.length > 0">
+  <h3>Students in Selected Module:</h3>
+  <ul>
+    <li *ngFor="let student of studentsDisplayData">
+      Name: {{ student.name }}, Surname: {{ student.surname }}, Ref Number: {{ student.ref_number }}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="!noStudents && studentsDisplayData.length === 0">
+  <p>No students found in this module.</p>
+</div>

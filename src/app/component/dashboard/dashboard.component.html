@@ -1,0 +1,118 @@
+<body>
+    <div class="container-fluid">
+      <div class="row mt-5 justify-content-center">
+        <div class="col-md-12">
+          <div class="card shadow p-4">
+            <h4 class="text-center text-muted mb-4">Welcome, {{ username }} {{ surname }}</h4>
+  
+            <h5 class="text-center text-muted mb-3">Dashboard Panel</h5>
+            <div class="row row-cols-2 row-cols-md-2 g-4">
+              <div class="col" *ngIf="isAdmin">
+                <div class="card action-card clickable-block" (click)="create_lecturer()">
+                  <div class="d-flex justify-content-center align-items-center">
+                    <ion-icon name="person-add-outline" class="fs-3"></ion-icon>
+                  </div>
+                  <div class="card-body text-center">
+                    <p class="card-text">Create Account</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col" *ngIf="isLecturer || isAdmin">
+                <div class="card action-card clickable-block" (click)="create_module()">
+                  <div class="d-flex justify-content-center align-items-center">
+                    <ion-icon name="newspaper-outline" class="fs-3"></ion-icon>
+                  </div>
+                  <div class="card-body text-center">
+                    <p class="card-text">Create Module</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col" *ngIf="isStudent || isAdmin">
+                <div class="card action-card clickable-block" (click)="register_module()">
+                  <div class="d-flex justify-content-center align-items-center">
+                    <ion-icon name="document-attach-outline" class="fs-3"></ion-icon>
+                  </div>
+                  <div class="card-body text-center">
+                    <p class="card-text">Module Registration</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col" *ngIf="isStudent || isAdmin">
+                <div class="card action-card clickable-block" (click)="view_module()">
+                  <div class="d-flex justify-content-center align-items-center">
+                    <ion-icon name="eye-outline" class="fs-3"></ion-icon>
+                  </div>
+                  <div class="card-body text-center">
+                    <p class="card-text">View Modules</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-warning w-100 mt-4" (click)="register()">
+              <i class="bi bi-box-arrow-right me-2"></i> Log Out
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+ 
+ 
+ 
+<!-- <body>
+    <div class="container-fluid">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-md-12">
+                <div class="card shadow p-4">
+                    <h4 class="text-center text-muted mb-4">Welcome, {{ username }} {{ surname }}</h4>
+
+                    <h5 class="text-center text-muted mb-3">Dashboard Panel</h5>
+                    <div class="row row-cols-2 row-cols-md-2 g-4">
+                        <div class="col">
+                            <div class="card action-card clickable-block" (click)="create_lecturer()">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <ion-icon name="person-add-outline" class="fs-3"></ion-icon>
+                                </div>
+                                <div class="card-body text-center">
+                                    <p class="card-text">Create Account</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card action-card clickable-block" (click)="create_module()">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <ion-icon name="newspaper-outline" class="fs-3"></ion-icon>
+                                </div>
+                                <div class="card-body text-center">
+                                    <p class="card-text">Create Module</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card action-card clickable-block" (click)="register_module()">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <ion-icon name="document-attach-outline" class="fs-3"></ion-icon>
+                                </div>
+                                <div class="card-body text-center">
+                                    <p class="card-text">Module Registration</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card action-card clickable-block" (click)="view_module()">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <ion-icon name="eye-outline" class="fs-3"></ion-icon>
+                                </div>
+                                <div class="card-body text-center">
+                                    <p class="card-text">View Modules</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-warning w-100 mt-4" (click)="register()">
+                        <i class="bi bi-box-arrow-right me-2"></i> Log Out
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> -->

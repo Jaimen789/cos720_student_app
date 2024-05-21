@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enrolled Modules</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+  <div class="container enrolled-modules-container">
+    <div class="header">
+      <h2>Enrolled Modules</h2>
+      <a href="/dashboard" class="btn btn-link">
+        <i class="bi bi-arrow-left"></i> Back to Dashboard
+      </a>
+    </div>
+
+    <div *ngIf="enrolledModules.length > 0; else noModules">
+      <table class="table table-hover module-table">
+        <thead>
+          <tr>
+            <th>Module Name</th>
+            <th>Credits</th>
+            <th>Lecturer</th>
+            <th>Semester</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let module of enrolledModules">
+            <td>{{ module.name }}</td>
+            <td>{{ module.credits }}</td>
+            <td>{{ module.lecturer }}</td>
+            <td>{{ module.semester }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ng-template #noModules>
+      <p class="no-modules">No modules enrolled.</p>
+    </ng-template>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+<!-- <h2>Enrolled Modules</h2>
+
+<div *ngIf="enrolledModules.length > 0; else noModules">
+  <table class="module-table">
+    <thead>
+      <tr>
+        <th>Module Name</th>
+        <th>Credits</th>
+        <th>Lecturer</th>
+        <th>Semester</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let module of enrolledModules">
+        <td>{{ module.name }}</td>
+        <td>{{ module.credits }}</td>
+        <td>{{ module.lecturer }}</td>
+        <td>{{ module.semester }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noModules>
+  <p>No modules enrolled.</p>
+</ng-template> -->

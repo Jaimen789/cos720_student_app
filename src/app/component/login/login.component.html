@@ -1,0 +1,57 @@
+<!-- <div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col"></div>
+        <div class="col-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <h4 class="text-dark text-muted">Login</h4>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">User name</label>
+                          <input type="email" class="form-control" name="email" [(ngModel)]="email">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input type="password" class="form-control" name="password" [(ngModel)]="password">
+                        </div>
+                        <button type="button" class="btn btn-info" (click)="login()">Login</button>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="/forgot-password"  class="text-dark" style="text-decoration: blue;"> Change/Forgot Password</a>
+                            </div>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div> -->
+
+
+<div class="container-fluid">
+    <div class="row mt-5 justify-content-center">
+        <div class="col-md-8"> <!-- Increase the column width -->
+            <div class="card shadow">
+                <div class="card-body p-5">
+                    <h1 class="text-center mb-4">Welcome to the Student Portal</h1>
+                    <h2 class="text-center mb-3">Login</h2> 
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control form-control-lg" placeholder="Enter Email" name="email" [(ngModel)]="email">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control form-control-lg" placeholder="Enter Password" name="password" [(ngModel)]="password">
+                        </div>
+                        <button type="button" class="btn btn-primary btn-lg w-100" (click)="login()">Login</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="/forgot-password" class="text-secondary">Forgot password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
