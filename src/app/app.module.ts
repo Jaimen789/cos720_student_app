@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 
 
 import {AngularFireModule} from '@angular/fire/compat'
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
 import { environment } from 'src/environments/environment';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
@@ -18,6 +20,9 @@ import { CreateModuleComponent } from './component/create-module/create-module.c
 import { ModuleRegistrationComponent } from './component/module-registration/module-registration.component';
 import { ViewModuleComponent } from './component/view-module/view-module.component';
 import { ViewStudentComponent } from './component/view-student/view-student.component';
+
+import { LoggingService } from './logging.service';
+import { ViewLogsComponent } from './component/view-logs/view-logs.component';
 
 @NgModule({
   declarations: [
@@ -30,17 +35,21 @@ import { ViewStudentComponent } from './component/view-student/view-student.comp
     CreateModuleComponent,
     ModuleRegistrationComponent,
     ViewModuleComponent,
-    ViewStudentComponent
+    ViewStudentComponent,
+    ViewLogsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     FormsModule,
     IonicModule.forRoot() 
     
   ],
-  providers: [],
+  providers: [
+    LoggingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
