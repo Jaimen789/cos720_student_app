@@ -1,0 +1,16 @@
+<div class="header">
+    <a href="/dashboard" class="btn btn-link back-button">&#8592; Back to Dashboard</a>
+    <h1>Security Logs</h1>
+  </div>
+  
+  <div class="logs-container">
+    <div *ngFor="let log of logs" class="log-entry">
+      <p><strong>Date:</strong> {{ log.LogDate }}</p>
+      <p><strong>Level:</strong> {{ log.LogLevel }}</p>
+      <p><strong>Message:</strong> {{ log.Message }}</p>
+      <p><strong>User Email:</strong> {{ log.UserEmail }}</p>
+      <p><strong>Raw Data:</strong> {{ log.RawData }}</p>
+      <p><strong>Optional Params:</strong> {{ log.OptionalParams }}</p>
+    </div>
+  </div>
+  

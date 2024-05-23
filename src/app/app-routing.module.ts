@@ -9,6 +9,7 @@ import { VerifyEmailComponent } from './component/verify-email/verify-email.comp
 import { CreateModuleComponent } from './component/create-module/create-module.component';
 import { ModuleRegistrationComponent } from './component/module-registration/module-registration.component';
 import { ViewModuleComponent } from './component/view-module/view-module.component';
+import { ViewLogsComponent } from './component/view-logs/view-logs.component';
 
 import { AuthGuardService } from './shared/auth-guard.service'
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'create-module', component: CreateModuleComponent, canActivate: [AuthGuardService], data: { roles: ['Admin', 'Lecturer']}},
   {path: 'module-registration', component: ModuleRegistrationComponent, canActivate: [AuthGuardService], data: { roles: ['Admin', 'Student']}},
   {path: 'view-module', component: ViewModuleComponent, canActivate: [AuthGuardService], data: { roles: ['Admin', 'Student']}},
+  {path: 'view-logs', component: ViewLogsComponent, canActivate: [AuthGuardService], data: { roles: ['Admin']}},
 ];
 
 @NgModule({
