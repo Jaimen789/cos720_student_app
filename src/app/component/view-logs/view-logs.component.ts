@@ -18,8 +18,12 @@ export class ViewLogsComponent implements OnInit {
         data.loggerId = log.payload.doc.id;
         return data;
       });
+  
+      // Add the following line to add new logs at the beginning of the array
+      this.logs.unshift(...this.logs);
     });
   }
+  
 
   navigateToDashboard(){}
 }
